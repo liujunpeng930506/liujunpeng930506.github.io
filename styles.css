@@ -167,3 +167,40 @@ h1 {
     margin-right: 10px;
     color: #673ab7;
 }
+
+/* 新增的返回按钮样式 */
+.back-button {
+    text-align: left;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.back-button .btn-secondary {
+    background-color: rgba(103, 58, 183, 0.2);
+    border: 1px solid #673ab7;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-button .btn-secondary:hover {
+    background-color: rgba(103, 58, 183, 0.4);
+}
+
+/* 调整项目页面的按钮样式 */
+.projects-container .buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.projects-container .btn-primary,
+.projects-container .btn-secondary {
+    white-space: nowrap;
+}
