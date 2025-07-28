@@ -20,6 +20,7 @@ body {
     height: 100%;
     background-image: url('star-light.png'); /* 替换为你喜欢的星空背景图片 */
     background-size: cover;
+    background-position: center;
     z-index: -1;
 }
 
@@ -64,6 +65,7 @@ h1 {
     justify-content: center;
     gap: 10px;
     margin-bottom: 30px;
+    flex-wrap: wrap; /* 允许标签换行 */
 }
 
 .tag {
@@ -73,12 +75,7 @@ h1 {
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.tag:hover {
-    background-color: #555;
+    /* 移除了 cursor: pointer 和 transition */
 }
 
 .buttons {
@@ -203,4 +200,12 @@ h1 {
 .projects-container .btn-primary,
 .projects-container .btn-secondary {
     white-space: nowrap;
+}
+
+/* 主页标签样式调整 */
+.container:not(.projects-container) .tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
 }
