@@ -18,7 +18,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('star-light.webp'); /* 使用webp格式 */
+    background-image: url('star-light.webp'); /* 替换为你喜欢的星空背景图片 */
     background-size: cover;
     background-position: center;
     z-index: -1;
