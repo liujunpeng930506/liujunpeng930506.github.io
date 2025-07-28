@@ -10,6 +10,7 @@ body {
     background-color: #121212;
     color: white;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 .background {
@@ -20,9 +21,17 @@ body {
     height: 100%;
     background-image: url('star-light.webp');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     z-index: -1;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .background {
+        background-size: cover;
+        background-position: center center;
+    }
 }
 
 .container {
@@ -43,6 +52,29 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
+    /* 移动端适配 */
+    max-width: 120px;
+    max-height: 120px;
+}
+
+/* 移动端头像优化 */
+@media (max-width: 768px) {
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .container {
+        padding: 30px 15px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
 }
 
 h1 {
@@ -87,6 +119,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .btn-primary {
@@ -98,6 +131,7 @@ h1 {
     font-size: 1rem;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    white-space: nowrap;
 }
 
 .btn-primary:hover {
@@ -113,6 +147,7 @@ h1 {
     font-size: 1rem;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    white-space: nowrap;
 }
 
 .btn-secondary:hover {
@@ -213,4 +248,27 @@ h1 {
     justify-content: center;
     gap: 10px;
     margin-bottom: 30px;
+}
+
+/* 移动端项目页面优化 */
+@media (max-width: 768px) {
+    .projects-container {
+        text-align: center;
+    }
+    
+    .project h2 {
+        font-size: 1.8rem;
+    }
+    
+    .projects-container .buttons {
+        justify-content: center;
+    }
+    
+    .back-button {
+        text-align: center;
+    }
+    
+    .projects-container .tag {
+        font-size: 1rem;
+    }
 }
