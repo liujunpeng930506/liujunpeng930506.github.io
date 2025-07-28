@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI作品集 - 刘俊鹏</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- 引入字体图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="star-light.webp" as="image">
+    <link rel="prefetch" href="projects.html">
+    <!-- 延迟加载字体图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 </head>
 <body>
     <!-- 头部背景 -->
-    <div class="background"></div>
+    <div class="background" id="background"></div>
 
     <!-- 主内容区域 -->
     <div class="container">
         <!-- 头像和标题 -->
         <div class="profile">
-            <img src="liujunpeng.png" alt="刘俊鹏的头像" class="avatar">
+            <img src="liujunpeng.webp" alt="刘俊鹏的头像" class="avatar" loading="eager">
             <h1>你好，我是刘俊鹏</h1>
             <p class="subtitle">一个疯狂追随AI的产品经理</p>
         </div>
@@ -41,5 +44,13 @@
             <a href="projects.html" class="btn-primary">查看我的作品集 →</a>
         </div>
     </div>
+
+    <!-- 背景图片预加载 -->
+    <script>
+        window.addEventListener('load', function() {
+            const bg = document.getElementById('background');
+            bg.classList.add('loaded');
+        });
+    </script>
 </body>
 </html>

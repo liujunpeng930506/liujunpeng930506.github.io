@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI作品集 - 作品详情</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- 引入字体图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="star-light.webp" as="image">
+    <!-- 延迟加载字体图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 </head>
 <body>
     <!-- 头部背景 -->
-    <div class="background"></div>
+    <div class="background" id="background"></div>
 
     <!-- 主内容区域 -->
     <div class="container projects-container">
 
         <!-- 返回按钮 -->
         <div class="back-button">
-            <a href="index.html" class="btn-secondary"><i class="fas fa-arrow-left"></i> 返回作品集首页</a>
+            <a href="index.html" class="btn-secondary">← 返回作品集首页</a>
         </div>
 
         <!-- 第一个项目 -->
@@ -102,5 +104,13 @@
             </div>
         </div>  
     </div>
+
+    <!-- 背景图片预加载 -->
+    <script>
+        window.addEventListener('load', function() {
+            const bg = document.getElementById('background');
+            bg.classList.add('loaded');
+        });
+    </script>
 </body>
 </html>

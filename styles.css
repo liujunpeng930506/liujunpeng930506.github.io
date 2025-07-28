@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* 系统字体 */
 }
 
 body {
@@ -18,10 +18,16 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('star-light.png'); /* 替换为你喜欢的星空背景图片 */
+    background-image: url('star-light.webp'); /* 使用webp格式 */
     background-size: cover;
     background-position: center;
     z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.background.loaded {
+    opacity: 1;
 }
 
 .container {
@@ -29,11 +35,11 @@ body {
     margin: 0 auto;
     padding: 50px 20px;
     text-align: center;
-    display: flex; /* 使用Flexbox */
-    flex-direction: column; /* 内容垂直排列 */
-    align-items: center; /* 水平居中 */
-    justify-content: center; /* 垂直居中 */
-    min-height: 100vh; /* 让容器高度占满整个视口 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .avatar {
@@ -65,7 +71,7 @@ h1 {
     justify-content: center;
     gap: 10px;
     margin-bottom: 30px;
-    flex-wrap: wrap; /* 允许标签换行 */
+    flex-wrap: wrap;
 }
 
 .tag {
@@ -74,8 +80,12 @@ h1 {
     border: none;
     padding: 8px 15px;
     border-radius: 20px;
-    font-size: 0.9rem;
-    /* 移除了 cursor: pointer 和 transition */
+    font-size: 0.9rem; /* 主页标签字体大小 */
+}
+
+/* 项目页面中的标签字体增大 */
+.projects-container .tag {
+    font-size: 1.2rem; /* 项目页面标签字体更大 */
 }
 
 .buttons {
